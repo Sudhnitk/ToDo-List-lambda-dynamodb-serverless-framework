@@ -1,0 +1,63 @@
+service: todo-list-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  stage: dev
+
+functions:
+  createTodo:
+    handler: handler.createTodo
+    events:
+      - http:
+          path: todos
+          method: post
+  getTodo:
+    handler: handler.getTodo
+    events:
+      - http:
+          path: todos/{id}
+          method: get
+  getAllTodo:
+    handler: handler.getAllTodo
+    events:
+      - http:
+          path: todos
+          method: get
+  updateTodo:
+    handler: handler.updateTodo
+    events:
+      - http:
+          path: todos/{id}
+          method: put
+  deleteTodo:
+    handler: handler.deleteTodo
+    events:
+      - http:
+          path: todos/{id}
+          method: delete
+iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:PutItem
+      - dynamodb:DeleteItem
+      - dynamodb:GetItem 
+      - dynamodb:Query
+  
+ 
+resources:
+  Resources:
+    TodoListTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: TodoListTable
+        AttributeDefinitions:
+          - AttributeName: "id"
+            AttributeType: "S"
+        KeySchema:
+          - AttributeName: "id"
+            KeyType: "HASH"
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
