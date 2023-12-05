@@ -23,7 +23,7 @@ functions:
     handler: handler.getAllTodo
     events:
       - http:
-          path: todos
+          path: getTodo
           method: get
   updateTodo:
     handler: handler.updateTodo

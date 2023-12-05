@@ -152,31 +152,37 @@ module.exports.deleteTodo = async (event) => {
     }
 };
 
-module.exports.getAllTodos = async () => {
-    try {
-        const params = {
-            TableName: tableName
-        };
+module.exports.getAllTodo = async () => {
+  try {
+      const params = {
+          TableName: tableName
+      };
 
-        const { Items } = await dynamoDBClient.send(new ScanCommand(params));
+      const { Items } = await dynamoDBClient.send(new ScanCommand(params));
 
-        if (!Items || Items.length === 0) {
-            return {
-                statusCode: 404,
-                body: JSON.stringify({ message: 'No todos found' })
-            };
-        }
+      if (!Items || Items.length === 0) {
+          return {
+              statusCode: 404,
+              body: JSON.stringify({ message: 'No todos found' })
+          };
+      }
 
-        const todos = Items.map((item) => unmarshall(item));
+      const todos = Items.map((item) => unmarshall(item));
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ message: 'Todos retrieved successfully', todos })
-        };
-    } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ message: 'Error retrieving todos', error: error.message })
-        };
-    }
+      // Debugging: Log the retrieved todos
+      console.log('Retrieved todos:', todos);
+
+      return {
+          statusCode: 200,
+          body: JSON.stringify({ message: 'Todos retrieved successfully', todos })
+      };
+  } catch (error) {
+      // Debugging: Log error message
+      console.error('Error retrieving todos:', error);
+
+      return {
+          statusCode: 500,
+          body: JSON.stringify({ message: 'Error retrieving todos', error: error.message })
+      };
+  }
 };

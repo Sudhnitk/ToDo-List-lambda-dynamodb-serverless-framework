@@ -186,7 +186,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/todo-list-service/dev/1701700310253-2023-12-04T14:31:50.253Z/todo-list-service.zip"
+          "S3Key": "serverless/todo-list-service/dev/1701767815061-2023-12-05T09:16:55.061Z/todo-list-service.zip"
         },
         "Handler": "handler.createTodo",
         "Runtime": "nodejs14.x",
@@ -211,7 +211,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/todo-list-service/dev/1701700310253-2023-12-04T14:31:50.253Z/todo-list-service.zip"
+          "S3Key": "serverless/todo-list-service/dev/1701767815061-2023-12-05T09:16:55.061Z/todo-list-service.zip"
         },
         "Handler": "handler.getTodo",
         "Runtime": "nodejs14.x",
@@ -236,7 +236,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/todo-list-service/dev/1701700310253-2023-12-04T14:31:50.253Z/todo-list-service.zip"
+          "S3Key": "serverless/todo-list-service/dev/1701767815061-2023-12-05T09:16:55.061Z/todo-list-service.zip"
         },
         "Handler": "handler.getAllTodo",
         "Runtime": "nodejs14.x",
@@ -261,7 +261,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/todo-list-service/dev/1701700310253-2023-12-04T14:31:50.253Z/todo-list-service.zip"
+          "S3Key": "serverless/todo-list-service/dev/1701767815061-2023-12-05T09:16:55.061Z/todo-list-service.zip"
         },
         "Handler": "handler.updateTodo",
         "Runtime": "nodejs14.x",
@@ -286,7 +286,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/todo-list-service/dev/1701700310253-2023-12-04T14:31:50.253Z/todo-list-service.zip"
+          "S3Key": "serverless/todo-list-service/dev/1701767815061-2023-12-05T09:16:55.061Z/todo-list-service.zip"
         },
         "Handler": "handler.deleteTodo",
         "Runtime": "nodejs14.x",
@@ -304,54 +304,54 @@
         "DeleteTodoLogGroup"
       ]
     },
-    "CreateTodoLambdaVersion6HyT0E8P2ey17TYIiR5WkQu56t5Amv0j0uba2S6z4k": {
+    "CreateTodoLambdaVersionoATrIgJ33POBlfah6XuSZyU0GgLcj4c9TVhDQoZ630": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateTodoLambdaFunction"
         },
-        "CodeSha256": "6sZHzAg7Txxpe+4tGsixAYaOcT/58DY4hinUbutXAiM="
+        "CodeSha256": "HzgU1wdPAFffidhhpQBU7+oux2Uk1KKVrIfJarNNsmM="
       }
     },
-    "GetTodoLambdaVersionQcDDK8qXe9d2pEl4y8OA6ftohQAv2V3jtlon4VE6Ro": {
+    "GetTodoLambdaVersionVj17E07HdNIMJ41tM8SxaPyjfPWV906IkryWyB7B8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetTodoLambdaFunction"
         },
-        "CodeSha256": "6sZHzAg7Txxpe+4tGsixAYaOcT/58DY4hinUbutXAiM="
+        "CodeSha256": "HzgU1wdPAFffidhhpQBU7+oux2Uk1KKVrIfJarNNsmM="
       }
     },
-    "GetAllTodoLambdaVersionR6whtiva512FrKvZkW1JIL3E4sogHsTJAFpJTXeW4": {
+    "GetAllTodoLambdaVersion9LBdUkKr0GPRsvnqFqIRRUYSk9pmFFaTMmamsVtLcw8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetAllTodoLambdaFunction"
         },
-        "CodeSha256": "6sZHzAg7Txxpe+4tGsixAYaOcT/58DY4hinUbutXAiM="
+        "CodeSha256": "HzgU1wdPAFffidhhpQBU7+oux2Uk1KKVrIfJarNNsmM="
       }
     },
-    "UpdateTodoLambdaVersionZVYDlQIbI3bGDMFgnD6BzZRGOj69f5DTTF07Inkw": {
+    "UpdateTodoLambdaVersionS9OzvwGV7FON126W2WKy41NXgWkqcRBwnfozfsDgcRU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateTodoLambdaFunction"
         },
-        "CodeSha256": "6sZHzAg7Txxpe+4tGsixAYaOcT/58DY4hinUbutXAiM="
+        "CodeSha256": "HzgU1wdPAFffidhhpQBU7+oux2Uk1KKVrIfJarNNsmM="
       }
     },
-    "DeleteTodoLambdaVersioncDgidA84ElG0hV1hLjKOM95RhIaKfaSyEOwgSWFo": {
+    "DeleteTodoLambdaVersionHFeDyYlCh9lCnQN0b0ELH7S3j06bRE1od0SXgUcivM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteTodoLambdaFunction"
         },
-        "CodeSha256": "6sZHzAg7Txxpe+4tGsixAYaOcT/58DY4hinUbutXAiM="
+        "CodeSha256": "HzgU1wdPAFffidhhpQBU7+oux2Uk1KKVrIfJarNNsmM="
       }
     },
     "ApiGatewayRestApi": {
@@ -388,6 +388,21 @@
           "Ref": "ApiGatewayResourceTodos"
         },
         "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceGettodo": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "getTodo",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -485,13 +500,13 @@
         "GetTodoLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayMethodTodosGet": {
+    "ApiGatewayMethodGettodoGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "GET",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceTodos"
+          "Ref": "ApiGatewayResourceGettodo"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -623,7 +638,7 @@
         "DeleteTodoLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1701700297331": {
+    "ApiGatewayDeployment1701767803206": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -634,7 +649,7 @@
       "DependsOn": [
         "ApiGatewayMethodTodosPost",
         "ApiGatewayMethodTodosIdVarGet",
-        "ApiGatewayMethodTodosGet",
+        "ApiGatewayMethodGettodoGet",
         "ApiGatewayMethodTodosIdVarPut",
         "ApiGatewayMethodTodosIdVarDelete"
       ]
@@ -859,7 +874,7 @@
     "CreateTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateTodoLambdaVersion6HyT0E8P2ey17TYIiR5WkQu56t5Amv0j0uba2S6z4k"
+        "Ref": "CreateTodoLambdaVersionoATrIgJ33POBlfah6XuSZyU0GgLcj4c9TVhDQoZ630"
       },
       "Export": {
         "Name": "sls-todo-list-service-dev-CreateTodoLambdaFunctionQualifiedArn"
@@ -868,7 +883,7 @@
     "GetTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetTodoLambdaVersionQcDDK8qXe9d2pEl4y8OA6ftohQAv2V3jtlon4VE6Ro"
+        "Ref": "GetTodoLambdaVersionVj17E07HdNIMJ41tM8SxaPyjfPWV906IkryWyB7B8"
       },
       "Export": {
         "Name": "sls-todo-list-service-dev-GetTodoLambdaFunctionQualifiedArn"
@@ -877,7 +892,7 @@
     "GetAllTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetAllTodoLambdaVersionR6whtiva512FrKvZkW1JIL3E4sogHsTJAFpJTXeW4"
+        "Ref": "GetAllTodoLambdaVersion9LBdUkKr0GPRsvnqFqIRRUYSk9pmFFaTMmamsVtLcw8"
       },
       "Export": {
         "Name": "sls-todo-list-service-dev-GetAllTodoLambdaFunctionQualifiedArn"
@@ -886,7 +901,7 @@
     "UpdateTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateTodoLambdaVersionZVYDlQIbI3bGDMFgnD6BzZRGOj69f5DTTF07Inkw"
+        "Ref": "UpdateTodoLambdaVersionS9OzvwGV7FON126W2WKy41NXgWkqcRBwnfozfsDgcRU"
       },
       "Export": {
         "Name": "sls-todo-list-service-dev-UpdateTodoLambdaFunctionQualifiedArn"
@@ -895,7 +910,7 @@
     "DeleteTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteTodoLambdaVersioncDgidA84ElG0hV1hLjKOM95RhIaKfaSyEOwgSWFo"
+        "Ref": "DeleteTodoLambdaVersionHFeDyYlCh9lCnQN0b0ELH7S3j06bRE1od0SXgUcivM"
       },
       "Export": {
         "Name": "sls-todo-list-service-dev-DeleteTodoLambdaFunctionQualifiedArn"
