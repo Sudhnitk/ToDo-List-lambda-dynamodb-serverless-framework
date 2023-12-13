@@ -9,12 +9,12 @@ const tableName = 'TodoListTable';
 module.exports.createTodo = async (event) => {
     try {
         const requestBody = JSON.parse(event.body);
-        const { id, task } = requestBody || {};
+        const { id, task,status } = requestBody || {};
 
-        if (!id || !task) {
+        if (!id || !task ||!status) {
             return {
                 statusCode: 400,
-                body: JSON.stringify({ message: 'ID or task is missing in the request body' })
+                body: JSON.stringify({ message: 'ID or  task or status is missing in the request body' })
             };
         }
 
@@ -22,7 +22,8 @@ module.exports.createTodo = async (event) => {
             TableName: tableName,
             Item: marshall({
                 id,
-                task
+                task,
+                status
             })
         };
 
@@ -69,7 +70,7 @@ module.exports.getTodo = async (event) => {
 
         const todo = unmarshall(Item);
 
-        return {
+        return {    
             statusCode: 200,
             body: JSON.stringify({ message: 'Todo retrieved successfully', todo })
         };
@@ -85,11 +86,13 @@ module.exports.updateTodo = async (event) => {
     try {
         const { id } = event.pathParameters || {};
         const { task } = JSON.parse(event.body || '{}');
+        const { status } = JSON.parse(event.body || '{}');
 
-        if (!id || !task) {
+
+        if (!id || !task || !status) {
             return {
                 statusCode: 400,
-                body: JSON.stringify({ message: 'ID or task is missing for update' })
+                body: JSON.stringify({ message: 'ID or task or status is missing for update' })
             };
         }
 
@@ -98,9 +101,15 @@ module.exports.updateTodo = async (event) => {
             Key: marshall({
                 id: id
             }),
-            UpdateExpression: 'SET task = :task',
+        
+            UpdateExpression: 'SET #task = :task, #status = :status',
+            ExpressionAttributeNames: {
+              '#task': 'task',
+              '#status': 'status'
+            },
             ExpressionAttributeValues: {
-                ':task': { S: task }
+              ':task': { S: task },
+              ':status': { S: status }
             },
             ReturnValues: 'ALL_NEW'
         };
@@ -169,7 +178,6 @@ module.exports.getAllTodo = async () => {
 
       const todos = Items.map((item) => unmarshall(item));
 
-      // Debugging: Log the retrieved todos
       console.log('Retrieved todos:', todos);
 
       return {
@@ -177,7 +185,6 @@ module.exports.getAllTodo = async () => {
           body: JSON.stringify({ message: 'Todos retrieved successfully', todos })
       };
   } catch (error) {
-      // Debugging: Log error message
       console.error('Error retrieving todos:', error);
 
       return {
